@@ -21,5 +21,11 @@ $siteLanguage->setAcceptedLanguages(['en',fr']);
 $languageToUse = $siteLanguage->getLanguage();
 ```
 
+## Run Tests
+```bash
+$ ./vendor/bin/phpunit
+
+```
+
 ## Licence
 MIT - See: [LICENCE](LICENSE)
