@@ -1,0 +1,23 @@
+{
+  "name": "cognetif/site-language",
+  "description": "Description",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jordin Brown",
+      "email": "jbrown@cognetif.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cognetif\\SiteLanguage\\": "src\\SiteLanguage"
+    }
+  }
+}
