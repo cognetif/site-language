@@ -16,7 +16,7 @@ use Cognetif\SiteLanguage\SiteLanguage;
 
 $siteLanguage = new SiteLanguage();
 $siteLanguage->setDefault('fr');
-$siteLanguage->setAccepted(['en',fr']);
+$siteLanguage->setAccepted(['en','fr']);
 
 $languageToUse = $siteLanguage->get();
 ```
