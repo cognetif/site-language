@@ -41,6 +41,11 @@ final class SiteLanguage
         }
     }
 
+    /**
+     * @param $serverAccepts
+     * @param $siteLanguages
+     * @return string
+     */
     private function getBestMatch($serverAccepts, $siteLanguages): string
     {
         $serverLang = explode(',', $serverAccepts);
@@ -84,34 +89,6 @@ final class SiteLanguage
         throw new MissingServerAcceptLanguageException();
     }
 
-    /**
-     * @throws InvalidConfigurationException
-     */
-    private function guardIsConfigured()
-    {
-        $this->guardAcceptedParam();
-        $this->guardDefaultParam();
-    }
-
-    /**
-     * @throws InvalidConfigurationException
-     */
-    private function guardAcceptedParam()
-    {
-        if (!is_array($this->accepted) || empty($this->accepted)) {
-            throw new InvalidConfigurationException();
-        }
-    }
-
-    /**
-     * @throws InvalidConfigurationException
-     */
-    private function guardDefaultParam()
-    {
-        if (!is_string($this->default) || strlen($this->default) === 0) {
-            throw new InvalidConfigurationException();
-        }
-    }
 
     /**
      * @return array
@@ -149,5 +126,33 @@ final class SiteLanguage
         return $this;
     }
 
+    /**
+     * @throws InvalidConfigurationException
+     */
+    private function guardIsConfigured()
+    {
+        $this->guardAcceptedParam();
+        $this->guardDefaultParam();
+    }
+
+    /**
+     * @throws InvalidConfigurationException
+     */
+    private function guardAcceptedParam()
+    {
+        if (!is_array($this->accepted) || empty($this->accepted)) {
+            throw new InvalidConfigurationException();
+        }
+    }
+
+    /**
+     * @throws InvalidConfigurationException
+     */
+    private function guardDefaultParam()
+    {
+        if (!is_string($this->default) || strlen($this->default) === 0) {
+            throw new InvalidConfigurationException();
+        }
+    }
 
 }

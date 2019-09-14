@@ -1,6 +1,6 @@
 # Cognetif Site Language
-This library will attempt to detect a best match between the browsers accepted language array and the provided website accepted language array.
-If no match can be found the default fallback will be returned.
+This library will attempt to detect a best match between the browsers accepted language from `$_SERVER['HTTP_ACCEPT_LANGUAGE']` and the provided array of website accepted languages.
+If no match can be found the default fallback will be returned. If the server accept languages includes a locale like `fr-FR`, the `fr` will be used to match.
 
 ## Installation
 Install with composer:
@@ -16,9 +16,9 @@ use Cognetif\SiteLanguage\SiteLanguage;
 
 $siteLanguage = new SiteLanguage();
 $siteLanguage->setDefault('fr');
-$siteLanguage->setAcceptedLanguages(['en',fr']);
+$siteLanguage->setAccepted(['en',fr']);
 
-$languageToUse = $siteLanguage->getLanguage();
+$languageToUse = $siteLanguage->get();
 ```
 
 ## Run Tests
@@ -26,6 +26,12 @@ $languageToUse = $siteLanguage->getLanguage();
 $ ./vendor/bin/phpunit
 
 ```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
 
 ## Licence
 MIT - See: [LICENCE](LICENSE)
