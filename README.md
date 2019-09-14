@@ -1,6 +1,10 @@
 # Cognetif Site Language
+<img src="https://travis-ci.org/cognetif/site-language.svg?branch=master" alt="Build Status"/> <a href="/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT LICENSE" /></a>
+
 This library will attempt to detect a best match between the browsers accepted language from `$_SERVER['HTTP_ACCEPT_LANGUAGE']` and the provided array of website accepted languages.
 If no match can be found the default fallback will be returned. If the server accept languages includes a locale like `fr-FR`, the `fr` will be used to match.
+
+
 
 ## Installation
 Install with composer:
